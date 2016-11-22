@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title Lunchbag
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .header-offset
+    .ui.container
+      .ui.menu
+        = link_to "Lunchbag", root_path, class: 'header item'
+        .right.menu
+          = link_to 'Sign in', '#', class: 'item'
+          = link_to 'Register', '#', class: 'item'
+      = yield
