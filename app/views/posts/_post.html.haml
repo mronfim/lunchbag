@@ -1,0 +1,26 @@
+- if post
+  .post{id: "#{post.id}"}
+    .post-image
+    .post-header
+      .post-info
+        = "#{post.user.email}"
+        %br
+        = "#{time_ago_in_words(post.created_at)} ago"
+      - if current_user.id == post.user.id
+        .ui.dropdown.pointing.bottom.right.post-more
+          %i.icon.ellipsis.horizontal
+          .menu
+            = link_to "Delete", post, method: 'delete', class: 'item'
+    .post-content
+      .post-title
+        %h3= post.title
+    .post-footer
+      .post-actions
+        %i.smile.icon
+        %i.icon.comments.outline
+        %i.share.icon
+
+:javascript
+  $(document).ready( function() {
+    $('.ui.dropdown').dropdown()
+  } );

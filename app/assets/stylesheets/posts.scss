@@ -1,0 +1,64 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post {
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #e9eaea;
+  width: 500px;
+  box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
+  margin: 0 auto;
+  margin-bottom: 20px;
+
+  .post-image {
+    width: 500px;
+    height: 450px;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
+  }
+
+  .post-content {
+    padding: 10px;
+  }
+
+  .post-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .post-info {
+      flex-grow: 1;
+      padding: 10px;
+    }
+
+    .post-more {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 5px;
+
+      i {
+        font-size: 1.5em;
+        color: #2f2f2f;
+      }
+    }
+  }
+
+  .post-footer {
+    height: 40px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e9eaea;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .post-actions {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+}

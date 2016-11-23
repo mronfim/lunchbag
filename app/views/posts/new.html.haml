@@ -1,0 +1,10 @@
+= form_for @post do |f|
+
+  .input-group
+    .label
+      = f.label :title
+    .ui.input.fluid
+      = f.text_field :title
+
+  .input-group
+    = f.submit "Post", class: 'ui green button'

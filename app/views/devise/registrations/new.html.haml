@@ -17,7 +17,7 @@
         - if @minimum_password_length
           %em= "(#{@minimum_password_length} characters minimum)"
       .ui.input.fluid
-        = f.email_field :email, autocomplete: 'off'
+        = f.password_field :password, autocomplete: 'off'
 
     .input-group
       .label
