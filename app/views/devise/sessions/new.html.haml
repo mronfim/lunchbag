@@ -1,0 +1,26 @@
+
+.login-box
+  %h2.header Log in
+  = form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+    .input-group
+      .label
+        = f.label :email
+      .ui.input.fluid
+        = f.email_field :email, autofocus: true
+
+    .input-group
+      .label
+        = f.label :password
+      .ui.input.fluid
+        = f.password_field :password, autocomplete: 'off'
+
+    - if devise_mapping.rememberable?
+      .input-group
+        .ui.checkbox
+          = f.check_box :remember_me
+          = f.label :remember_me
+
+    .input-group
+      = f.submit 'Sign in', class: 'ui green button fluid'
+
+    = render 'devise/shared/links'

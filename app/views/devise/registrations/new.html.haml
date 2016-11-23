@@ -1,0 +1,31 @@
+
+.register-box
+  %h2.header Register
+
+  = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+    = devise_error_messages!
+
+    .input-group
+      .label
+        = f.label :email
+      .ui.input.fluid
+        = f.email_field :email, autofocus: true
+
+    .input-group
+      .label
+        = f.label :password
+        - if @minimum_password_length
+          %em= "(#{@minimum_password_length} characters minimum)"
+      .ui.input.fluid
+        = f.email_field :email, autocomplete: 'off'
+
+    .input-group
+      .label
+        = f.label :password_confirmation
+      .ui.input.fluid
+        = f.password_field :password_confirmation, autocomplete: 'off'
+
+    .input-group
+      = f.submit 'Sign up', class: 'ui green button fluid'
+
+    = render 'devise/shared/links'
