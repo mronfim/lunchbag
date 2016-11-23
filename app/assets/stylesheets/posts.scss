@@ -13,9 +13,17 @@
 
   .post-image {
     width: 500px;
-    height: 450px;
+    .img {
+      border-bottom: 1px solid #f3f3f3;
+      width: 100%;
+    }
+  }
+
+  .post-image-missing {
+    width: 500px;
     background-color: #f3f3f3;
     border-bottom: 1px solid #f3f3f3;
+    height: 450px;
   }
 
   .post-content {

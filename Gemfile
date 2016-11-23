@@ -15,6 +15,7 @@ gem 'semantic-ui-sass', '~> 2.2', '>= 2.2.6.0'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'haml-rails'
 gem 'devise', '~> 4.2'
+gem 'paperclip', '~> 5.1'
 
 group :development, :test do
   gem 'byebug', platform: :mri

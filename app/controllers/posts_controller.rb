@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+      @post.create_image(image_params)
       redirect_to root_url
     else
       render 'new'
@@ -28,6 +29,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title)
+  end
+
+  def image_params
+    params.require(:post).permit(:file)
   end
 
   def correct_user

@@ -1,6 +1,10 @@
 - if post
   .post{id: "#{post.id}"}
-    .post-image
+    - if post.image
+      .post-image
+        = image_tag post.image.file.url(:post)
+    - else
+      .post-image-missing
     .post-header
       .post-info
         = "#{post.user.email}"
