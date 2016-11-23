@@ -3,31 +3,39 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post {
+  width: 100%;
+  max-width: 500px;
   border-radius: 5px;
-  overflow: hidden;
   border: 1px solid #e9eaea;
-  width: 500px;
   box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15);
   margin: 0 auto;
   margin-bottom: 20px;
+  background-color: white;
 
   .post-image {
-    width: 500px;
-    .img {
+    width: 100%;
+    img {
+      display: block;
       border-bottom: 1px solid #f3f3f3;
       width: 100%;
+      border-radius: 5px 5px 0 0;
     }
   }
 
   .post-image-missing {
-    width: 500px;
-    background-color: #f3f3f3;
+    width: 100%;
+    background-color: #d1d1d1;
     border-bottom: 1px solid #f3f3f3;
     height: 450px;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  .post-content {
-    padding: 10px;
+    i {
+      color: #919191;
+      font-size: 5em;
+      height: auto;
+    }
   }
 
   .post-header {
@@ -35,38 +43,96 @@
     flex-direction: row;
     justify-content: space-between;
 
+    .post-user-pic {
+      width: 60px;
+      height: 60px;
+      background-color: white;
+      border-radius: 5px;
+      margin-left: 10px;
+      margin-top: -10px;
+      border: 2px solid white;
+
+      img {
+        width: 100%;
+        border-radius: 3px;
+      }
+    }
+
     .post-info {
       flex-grow: 1;
       padding: 10px;
+
+      .post-user {
+        font-size: 1.2em;
+      }
+
+      .post-time-ago {
+        font-size: .9em;
+        color: #989898;
+      }
     }
 
     .post-more {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      margin-top: 5px;
+      height: 20px;
+      padding: 0 10px 0 5px;
 
       i {
         font-size: 1.5em;
-        color: #2f2f2f;
+        color: #989898;
+      }
+
+      .post-more-menu {
+        left: auto;
+        right: 0px;
+      }
+
+      .post-more-option {
+        display: flex;
+        align-items: center;
+
+        i {
+          height: auto;
+          margin-right: 20px;
+        }
       }
     }
   }
 
+  .post-content {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
   .post-footer {
     height: 40px;
-    background-color: #f9f9f9;
     border-top: 1px solid #e9eaea;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 0 5px;
 
     .post-actions {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
+
+      .action {
+        margin-right: 20px;
+
+        a {
+          color: #656565;
+          &:hover {
+            .label {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        i {
+          font-size: 1.2em;
+        }
+      }
     }
   }
 }

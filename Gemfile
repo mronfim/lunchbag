@@ -16,6 +16,8 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'haml-rails'
 gem 'devise', '~> 4.2'
 gem 'paperclip', '~> 5.1'
+gem 'font-awesome-rails', '~> 4.7'
+gem 'ionicons-rails', '~> 2.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri

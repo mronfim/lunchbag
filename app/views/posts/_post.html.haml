@@ -1,28 +1,46 @@
 - if post
   .post{id: "#{post.id}"}
-    - if post.image
+    - if post.image && post.image.file?
       .post-image
         = image_tag post.image.file.url(:post)
     - else
       .post-image-missing
+        %i.icon.image
     .post-header
+      .post-user-pic
+        = image_tag "http://semantic-ui.com/images/avatar2/large/matthew.png"
       .post-info
-        = "#{post.user.email}"
-        %br
-        = "#{time_ago_in_words(post.created_at)} ago"
+        .post-user
+          = post.user.email
+        .post-time-ago
+          = "#{time_ago_in_words(post.created_at)} ago"
       - if current_user.id == post.user.id
-        .ui.dropdown.pointing.bottom.right.post-more
-          %i.icon.ellipsis.horizontal
-          .menu
-            = link_to "Delete", post, method: 'delete', class: 'item'
+        .ui.dropdown.bottom.right.post-more
+          %i.ion-more
+          .menu.post-more-menu
+            = link_to '', class: 'item edit post-more-option' do
+              %i.ion-edit
+              .text Edit post
+            = link_to post, method: 'delete', class: 'item delete post-more-option' do
+              %i.ion-trash-a
+              .text Delete post
     .post-content
       .post-title
-        %h3= post.title
+        %h3= post.title.capitalize
     .post-footer
       .post-actions
-        %i.smile.icon
-        %i.icon.comments.outline
-        %i.share.icon
+        .action.like
+          = link_to '' do
+            %i.icon.smile.outline
+            %span.label Like
+        .action.comment
+          = link_to '' do
+            %i.icon.comments.outline
+            %span.label Comment
+        .action.share
+          = link_to '' do
+            %i.share.icon
+            %span.label Share
 
 :javascript
   $(document).ready( function() {
